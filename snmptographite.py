@@ -2,10 +2,11 @@
 
 import ecks
 import graphitesend
+import os
 import yaml
 
-with open("snmptographite.yml", 'r') as ymlfile:
-    config = yaml.load(ymlfile)
+with open(os.path.dirname(os.path.abspath(__file__)) + os.sep + 'snmptographite.yml', 'r') as yml_file:
+    config = yaml.load(yml_file)
 
 graphite_config = config['graphite']
 
